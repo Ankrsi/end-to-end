@@ -1,0 +1,29 @@
+{
+  "name": "e2e-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node testing/functional.test.js && node -e \"process.env.E2E_BACKEND='noble';require('./testing/functional.test.js')\"",
+    "bench": "node testing/bench.js",
+    "loadtest": "node testing/run-loadtest.js",
+    "loadtest:realistic": "node -e \"process.env.LOADTEST_MODE='realistic';require('./testing/run-loadtest.js')\"",
+    "test:all": "node testing/run-all.js",
+    "loadtest:10k": "node -e \"process.env.LOADTEST_PAIRS='500';process.env.LOADTEST_MSGS='20';require('./testing/run-loadtest.js')\"",
+    "test:all:10k": "node -e \"process.env.LOADTEST_PAIRS='500';process.env.LOADTEST_MSGS='20';require('./testing/run-all.js')\"",
+    "loadtest:100k": "node -e \"process.env.LOADTEST_PAIRS='1000';process.env.LOADTEST_MSGS='100';require('./testing/run-loadtest.js')\"",
+    "test:all:100k": "node -e \"process.env.LOADTEST_PAIRS='1000';process.env.LOADTEST_MSGS='100';require('./testing/run-all.js')\"",
+    "test:interop": "node testing/interop/run.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.21.3",
+    "e2e-crypto": "file:./e2e-crypto"
+  }
+}

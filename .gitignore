@@ -1,0 +1,12 @@
+node_modules/
+testing/report-*.md
+e2e-crypto/*.tgz
+# interop test outputs (vectors-state.json holds test private keys)
+testing/interop/vectors*.json
+testing/interop/replies-*.json
+# native builds
+e2e-crypto-kotlin/build/
+e2e-crypto-kotlin/.gradle/
+e2e-crypto-kotlin/.kotlin/
+e2e-crypto-swift/.build/
+e2e-crypto-swift/.swiftpm/

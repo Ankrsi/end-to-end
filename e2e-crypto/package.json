@@ -1,0 +1,29 @@
+{
+  "name": "e2e-crypto",
+  "version": "1.2.0",
+  "description": "X3DH + Double Ratchet + Sender Keys end-to-end encryption. Pure JS, runs in Node and React Native.",
+  "main": "src/index.js",
+  "react-native": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "node": "./src/node.js",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "sideEffects": false,
+  "license": "ISC",
+  "dependencies": {
+    "@noble/ciphers": "^1.3.0",
+    "@noble/curves": "^1.9.7",
+    "@noble/hashes": "^1.8.0"
+  },
+  "browser": {
+    "./src/node.js": "./src/index.js"
+  }
+}
