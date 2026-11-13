@@ -10,6 +10,7 @@ const { SessionManager, MissingSenderKeyError, parseEnvelope, isEnvelope } = req
 const { runSelfTest } = require('./selfTest');
 const { E2EEClient, serializeBundle, parseBundle } = require('./client');
 const storage = require('./storage');
+const { encryptFile, decryptFile } = require('./media');
 
 module.exports = {
   // namespaced
@@ -46,4 +47,7 @@ module.exports = {
   createEncryptedStore: storage.createEncryptedStore,
   masterKeyFrom: storage.masterKeyFrom,
   reactNativeStores: storage.reactNativeStores,
+  // chat media: lock a file before upload, key goes in the e2e message
+  encryptFile,
+  decryptFile,
 };

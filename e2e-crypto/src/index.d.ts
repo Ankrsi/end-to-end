@@ -306,3 +306,14 @@ export function reactNativeStores(modules: { SecureStore: any; AsyncStorage: any
   secureStore: SessionStore;
   store: SessionStore;
 };
+
+// ─── Chat media (photos, videos, voice notes, files) ───
+
+/** Locks a file with a new random key. Upload `data`; send `key` inside the e2e chat message. */
+export function encryptFile(fileBytes: Uint8Array): { key: Uint8Array; data: Uint8Array };
+/**
+ * Downloads the locked file from `url` and unlocks it. `key` is bytes or base64.
+ * `type` is the url's extension (mp4, pdf, jpeg, png, ...), or '' if none.
+ * Throws if the download fails, the key is wrong or the file was changed.
+ */
+export function decryptFile(key: Uint8Array | string, url: string): Promise<{ data: Uint8Array; type: string }>;
